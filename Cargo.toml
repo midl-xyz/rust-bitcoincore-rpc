@@ -2,6 +2,37 @@
 
 members = [
     "json",
-    "client",
-    "integration_test",
+    "client"
 ]
+
+[patch.crates-io.bitcoin-addresses]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.base58ck]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.bitcoin]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.bitcoin_hashes]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.bitcoin-internals]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.bitcoin-io]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.bitcoin-primitives]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
+
+[patch.crates-io.bitcoin-units]
+git = "https://github.com/midl-xyz/rust-bitcoin.git"
+branch = "testnet4"
