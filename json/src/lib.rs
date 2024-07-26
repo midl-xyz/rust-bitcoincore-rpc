@@ -117,7 +117,7 @@ pub struct GetNetworkInfoResult {
     pub incremental_fee: Amount,
     #[serde(rename = "localaddresses")]
     pub local_addresses: Vec<GetNetworkInfoResultAddress>,
-    pub warnings: String,
+    pub warnings: StringOrStringArray,
 }
 
 #[derive(Clone, PartialEq, Eq, Debug, Deserialize, Serialize)]
@@ -516,7 +516,7 @@ pub struct GetMiningInfoResult {
     pub pooled_tx: usize,
     #[serde(deserialize_with = "deserialize_bip70_network")]
     pub chain: Network,
-    pub warnings: String,
+    pub warnings: StringOrStringArray,
 }
 
 #[derive(Clone, PartialEq, Eq, Debug, Deserialize, Serialize)]
@@ -1003,6 +1003,15 @@ pub struct GetAddressInfoResult {
     pub label: Option<String>,
 }
 
+/// Used to represent values that can either be a string or a string array.
+#[derive(Clone, Debug, Deserialize, PartialEq, Eq, Serialize)]
+#[serde(untagged)]
+pub enum StringOrStringArray {
+    String(String),
+    StringArray(Vec<String>),
+}
+
+
 /// Models the result of "getblockchaininfo"
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct GetBlockchainInfoResult {
@@ -1045,7 +1054,7 @@ pub struct GetBlockchainInfoResult {
     #[serde(default)]
     pub softforks: HashMap<String, Softfork>,
     /// Any network and blockchain warnings.
-    pub warnings: String,
+    pub warnings: StringOrStringArray,
 }
 
 #[derive(Clone, PartialEq, Eq, Debug)]
