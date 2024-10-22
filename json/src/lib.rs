@@ -910,6 +910,7 @@ pub enum ScriptPubkeyType {
     ScriptHash,
     MultiSig,
     NullData,
+    Anchor, // btcd 28 Lightning protocol compatibility
     Witness_v0_KeyHash,
     Witness_v0_ScriptHash,
     Witness_v1_Taproot,
